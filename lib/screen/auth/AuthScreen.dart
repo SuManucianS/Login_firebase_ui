@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_loginui/screen/BackgroundPainter.dart';
+import 'package:flutter_loginui/screen/auth/sign_in.dart';
+import 'package:lit_firebase_auth/lit_firebase_auth.dart';
 class AuthScreen extends StatefulWidget{
   const AuthScreen({Key key}) : super(key: key);
 
@@ -25,26 +27,22 @@ class _AuthScreenState extends State<AuthScreen> with SingleTickerProviderStateM
   }
   @override
   Widget build(BuildContext context) {
+
     // TODO: implement build
     return Scaffold(
-      body: Stack(
-        children: [
-          SizedBox.expand(
-            child: CustomPaint(
-              painter: BackgroundPainter(
-                animation: _controller.view
-              ),
-            )
-          ),
-          Center(
-            child: RaisedButton (
-              onPressed: (){
-                _controller.forward(from: 0);
-              },
-              child: Text ('Animate'),
+      body: LitAuth.custom(
+        child: Stack(
+          children: [
+            SizedBox.expand(
+              child: CustomPaint(
+                painter: BackgroundPainter(
+                  animation: _controller.view
+                ),
+              )
             ),
-          )
-        ],
+            SignIn()
+          ],
+        ),
       ),
     );
   }
