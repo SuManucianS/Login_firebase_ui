@@ -70,7 +70,6 @@ class SignInBar extends StatelessWidget{
       ),
     );
   }
-
 }
 
 /*class SignInBar extends StatelessWidget {
@@ -118,7 +117,6 @@ class _LoadingIndicator extends StatelessWidget{
   final bool isLoading;
   @override
   Widget build(BuildContext context) {
-
     // TODO: implement build
     return ConstrainedBox(
       constraints: const BoxConstraints(maxWidth: 100),
